@@ -13,7 +13,7 @@ class Movie
         name=name;
         cast=cast;
 
-        cout<<name<<"\n"<<cast;
+        cout<<name<<"\n"<<cast<<"\n";
     }
 };
 
