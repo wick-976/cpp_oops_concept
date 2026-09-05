@@ -2,7 +2,7 @@
     "configurations": [
         {
             "name": "Mac",
-            "compilerPath": "/usr/bin/clang++",
+            "compilerPath": "/opt/homebrew/bin/g++-16",
             "cppStandard": "c++17",
             "intelliSenseMode": "macos-clang-arm64",
             "includePath": [
