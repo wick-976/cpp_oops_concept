@@ -1,5 +1,6 @@
 //in first function we try to insert a new node at the startingn 
 //in second function we insert a node at last 
+//in third we try to insert a new node before the last node
 #include <bits/stdc++.h>
 using namespace std;
 
@@ -88,6 +89,24 @@ void insert_at_end(Node* hd,int val)
     temp->next=nn;
     print(hd);
 }
+
+void insert_before_end(Node* hd,int val)
+{
+    Node* i=hd;
+
+    while(i->next != NULL)
+    {
+        i=i->next;
+    }
+    Node* prev=i->back;
+
+    Node* nn= new Node(val,i,prev);   
+    prev->next=nn;
+    i->back=nn;
+
+    print(hd);
+
+}
 int main() {
     vector<int> num = {1, 2, 3, 4, 5};
     Node* head = link_list_create(num);
@@ -104,9 +123,9 @@ int main() {
     cin>>value;
     //insertion_before_head(head,value);
 
-    insert_at_end(head,value);
+    //insert_at_end(head,value);
 
-
+    insert_before_end(head,value);
 
     return 0;
 }
