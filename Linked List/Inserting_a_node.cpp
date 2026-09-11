@@ -107,6 +107,28 @@ void insert_before_end(Node* hd,int val)
     print(hd);
 
 }
+void insert_before_kth_element(Node* hd,int val,int k)
+{
+    Node* i=hd;
+    int count=0;
+
+    while(i != NULL)
+    {
+        count++;
+        if(count==k)
+        {
+            break;
+        }
+        i=i->next;
+    }
+    Node* prev=i->back;
+    Node* nn=new Node(val,i,prev);
+
+    i->back=nn;
+    prev->next=nn;
+
+    print(hd);
+}
 int main() {
     vector<int> num = {1, 2, 3, 4, 5};
     Node* head = link_list_create(num);
@@ -118,14 +140,17 @@ int main() {
 
     print(head);
 
-    cout<<"Enter the value you need to insert = ";
-    int value;
-    cin>>value;
+    cout<<"Enter the value you need to insert and kth element below";
+    int value,k;
+    cin>>value>>k;
     //insertion_before_head(head,value);
 
     //insert_at_end(head,value);
 
-    insert_before_end(head,value);
+    //insert_before_end(head,value);
+
+    insert_before_kth_element(head,value,k);
+
 
     return 0;
 }
